@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hk.dao.UserDao">
+	<insert id="addUser" parameterType="User">
+		insert into admin(t_id,name,password,quanxian) values(#{t_id},#{name},#{password},#{quanxian})
+	</insert>
+	
+	<select id="findUserByNameAndPwd" resultType="User">
+		select * from admin where name=#{name} and password=#{password}
+	</select>
+</mapper>
